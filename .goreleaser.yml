@@ -23,12 +23,16 @@ builds:
       - windows
       - darwin
 archives:
-  - replacements:
+  - builds: # Builds reference which build instances should be archived in this archive.
+      - "example-oauth-authc"
+      - "example-oauth-fe"
+    replacements:
       darwin: Darwin
       linux: Linux
       windows: Windows
       386: i386
       amd64: x86_64
+    allow_different_binary_count: true
 checksum:
   name_template: 'checksums.txt'
 snapshot:
