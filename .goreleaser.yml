@@ -23,11 +23,21 @@ builds:
       - windows
       - darwin
 archives:
-  - builds: # Builds reference which build instances should be archived in this archive.
+  - id: "archive-example-oauth-authc"
+    name_template: "authc_{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    builds: # Builds reference which build instances should be archived in this archive.
       - "example-oauth-authc"
+    replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+    allow_different_binary_count: true
+  - id: "archive-example-oauth-fe"
+    name_template: "fe_{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    builds: # Builds reference which build instances should be archived in this archive.
       - "example-oauth-fe"
-    format: binary
-    name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     replacements:
       darwin: Darwin
       linux: Linux
