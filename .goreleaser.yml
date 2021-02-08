@@ -26,6 +26,8 @@ archives:
   - builds: # Builds reference which build instances should be archived in this archive.
       - "example-oauth-authc"
       - "example-oauth-fe"
+    format: binary
+    name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     replacements:
       darwin: Darwin
       linux: Linux
