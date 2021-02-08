@@ -5,7 +5,8 @@ before:
     # You may remove this if you don't use go modules.
     - go mod download
 builds:
-  - id: "example-oauth-authc"
+  -
+    id: "example-oauth-authc"
     main: ./cmd/authc/main.go
     env:
       - CGO_ENABLED=0
@@ -14,7 +15,8 @@ builds:
       - windows
       - darwin
 
-  - id: "example-oauth-fe"
+  -
+    id: "example-oauth-fe"
     main: ./cmd/frontend/main.go
     env:
       - CGO_ENABLED=0
